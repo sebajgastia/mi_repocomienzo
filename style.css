@@ -214,3 +214,216 @@ li a.active, li a:hover{
  .efecto-lineas::after{
     right: -70px;
  }
+
+ /*NOSOTROS, GRIDS Y MEDIA*/
+
+ .contenido2{
+    width: 90%;
+    max-width: 1000px;
+    margin: 20px auto;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, auto);
+
+    grid-template-areas: "center-sobrenosotros center-sobrenosotros center-sobrenosotros"
+                         "nav2  nav2  nav2" 
+                         "texto-nosotros texto-nosotros sidebar"
+                         "footer2  footer2 footer2" 
+}
+
+.contenido2 > div,
+.contenido2 .nav2,
+.contenido2 .texto-nosotros,
+.contenido2 .center-sobrenosotros,
+.contenido2 .sidebar,
+.contenido2 .footer2{
+    padding: 20px;
+    border-radius: 4px;
+}
+
+.contenido2 .nav2{
+    grid-column-start: 1;
+    grid-column-end: 4 ;
+    grid-template-areas: nav2;
+}
+
+.contenido2 .center-sobrenosotros{
+    grid-column-start: 2;
+    grid-column-end:4 ;
+    grid-area: center-sobrenosotros;
+}
+
+.contenido2 .texto-nosotros{
+    grid-column: span 2;
+    grid-area: texto-nosotros;
+}
+
+.contenido2 .sidebar{
+    grid-column: 3 / 4;
+    min-height: 100px;
+    grid-area: sidebar;
+}
+
+.contenido2 .footer2{
+   background: black;
+   grid-column: span 3;
+   grid-area: footer2;
+}
+
+
+.center-sobrenosotros{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   color: #DA6011 ;
+   font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+   padding: 20px;
+   margin: 20px;
+}
+/*fondo de pantalla*/
+.body-2{ 
+   background-image: url(img/nosotros.jpg);
+   background-size: cover;
+   background-position: center;
+   height: 100vh;
+   background-repeat: no-repeat;
+   background-attachment: fixed;
+}
+
+.h1{
+   background-color: #DA6011;
+    color: white;
+}
+
+.color-texto{
+    color: #FBF7F7;
+}
+
+.footer2{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   color: white;
+}
+
+.center-images{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+}
+
+/*barra menu y media*/
+*{
+   padding: 0;
+   margin: 0;
+   text-decoration: none;
+   list-style: none;
+   box-sizing: border-box;
+}
+
+.nav2{
+   background: #2C07A0;
+   height: 80px;
+   width: 100%;
+}
+
+.nav2 ul{
+   float:right;
+   margin-right:20px ;
+}
+.nav2 ul li{
+  display: inline;
+  line-height: 80px;
+  margin: 0 5px;
+}
+
+.nav2 ul li a{
+  color: white;
+  font-size: 18px;
+  padding: 7px 13px;
+  border-radius: 3px; 
+}
+
+li a.active, li a:hover{
+  background: cyan;
+  transition: all 0.5s;
+}
+
+.checkbtn{
+  font-size: 30px;
+  color: #FBF7F7;
+  float: right;
+  line-height: 80px;
+  margin-right: 40px;
+  cursor: pointer;
+  display: none;
+}
+
+#check{
+  display: none;
+}
+
+@media (max-width: 600px){
+  
+  .checkbtn{
+      display: block;
+  }
+
+  .nav2 ul{
+      position:fixed;
+      width: 100%;
+      height: 100vh;
+      background: #2C07A0;
+      top: 80px;
+      left: -100%;
+      text-align: center;
+      transition: all 0.5s;
+  }
+
+  .nav2 ul li{
+      display: block;
+      margin: 50px 0;
+      line-height: 30px;
+  }
+  
+  .nav2 ul li a{
+      font-size: 20px;
+  }
+
+  li a:hover, li a.active{
+      background-color: cyan;
+  }
+
+  #check:checked ~ ul{
+      left: 0;
+  }
+
+  .contenido2 .sidebar{
+       grid-column: 1 / -1;
+  }
+
+  .contenido2{
+   grid-template-areas:    "center-sobrenosotros center-sobrenosotros center-sobrenosotros"
+                           "nav2  nav2  nav2" 
+                           "texto-nosotros texto-nosotros texto-nosotros"
+                           "sidebar sidebar sidebar"
+                           "footer2  footer2 footer2" 
+  }
+}
+
+/*logo*/
+.brand-2 img{
+   align-items: center;
+   position: absolute;
+   margin-left: 20px;
+   padding: -30px;
+   margin: -10px;
+   height: 58px;
+   width: 90px;
+}
+
+.h1{
+    position:relative;
+}
